@@ -1,8 +1,18 @@
 "use client";
 import { useState } from "react";
 import { deleteRoom } from "@/lib/action";
-import { IoTrashOutline } from "react-icons/io5";
+import {IoPencil, IoTrashOutline} from "react-icons/io5";
 import { IoWarningOutline } from "react-icons/io5";
+import Link from "next/link";
+
+
+export const EditButton = ({id}: {id:string}) =>{
+    return(
+        <Link href={`/admin/room/edit/${id}`} className="rounded-sm p-1 hover:bg-gray-200">
+            <IoPencil className="size-5"/>
+        </Link>
+    )
+}
 
 export const DeleteButton = ({ id, image }: { id: string; image: string }) => {
     const [open, setOpen] = useState(false);
